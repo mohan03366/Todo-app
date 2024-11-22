@@ -22,7 +22,7 @@ const TodoItemsReducer = (curritems, action) => {
   return newTodoitems;
 };
 
-const TodoContextProvider = ({ Children }) => {
+const TodoContextProvider = ({ children }) => {
   const [Addtodoitems, DispatchAddtodoitems] = useReducer(TodoItemsReducer, []);
   const AddNewItem = (inputname, inputdate) => {
     const newItem = {
@@ -50,7 +50,7 @@ const TodoContextProvider = ({ Children }) => {
         Addtodoitems,
       }}
     >
-      {Children}
+      {children}
     </Todocontext.Provider>
   );
 };
